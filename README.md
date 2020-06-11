@@ -1,0 +1,2 @@
+# QaFullStack
+ Ruby for testers

@@ -58,6 +58,19 @@ describe ContaCorrente do
             end
         end
 
+        context 'quando o saque é maior que do que o limete por saque' do
+            before(:all) do
+                @conta = ContaCorrente.new(1000.00)
+                @conta.saca(701.00)
+            end
+            it 'vejo mensagem' do
+                expect(@conta.mensagem).to eql 'Limite maximo por saque é de R$ 700'
+            end
+            it 'meu saldo permanece  conforme o valor inicial' do
+                expect(@conta.saldo).to eql 1000.00
+            end
+        end
+
     end
 
 end
